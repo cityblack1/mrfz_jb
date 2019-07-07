@@ -2,6 +2,7 @@
 
 import win32com.client
 import win32gui
+import time
 
 dm = win32com.client.Dispatch('dm.dmsoft')
 #current version
@@ -58,8 +59,8 @@ keypad 字符串: 键盘仿真模式 取值有以下几种
 注意此模式需要管理员权限
 
 """
-        self.real_init()
         self.enable_front = enable_front
+        self.real_init()
 
     def real_init(self):
         hd = dm.EnumWindow(0, 'TheRender', 'RenderWindow', 3)
