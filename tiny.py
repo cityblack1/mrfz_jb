@@ -5,7 +5,7 @@ from base import Ops, dm
 """tiny 是 540 × 960 分辨率"""
 
 class MyOps(Ops):
-    def run(self):
+    def run(self, click_pos):
         # self.setFront()
         self.sleep_a_while(1)
         # 1181,638 and 1182,656 是『开始行动』按钮的两个点
@@ -24,13 +24,11 @@ class MyOps(Ops):
         # 现在应该进入战斗
         while not (dm.GetColor(832,480) == '0093d5' and dm.GetColor(857,490) == 'ffffff'):
             print('inhere')
-            self.click(348,387)
+            self.click(*click_pos)
             self.sleep_a_while(3)
 
-def main():
-    o = MyOps()
-    while True:
-        o.run()
 
 if __name__ == '__main__':
-    main()
+    o = MyOps()
+    while True:
+        o.run((348, 387))

@@ -1,6 +1,8 @@
 # coding: utf-8
 
-"""执行多个游戏客户端"""
+"""执行多个游戏客户端
+540 × 960 分辨率
+"""
 import win32gui
 from base import Ops, dm
 
